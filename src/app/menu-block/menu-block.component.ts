@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { MenuService } from '../menu.service';
+
 @Component({
   selector: 'app-menu-block',
   templateUrl: './menu-block.component.html',
@@ -7,13 +8,13 @@ import { MenuService } from '../menu.service';
 })
 export class MenuBlockComponent implements OnInit {
 
-  dishes: any[];
   @Input() kind: string;
+  @Input() dishlistTemplate: TemplateRef<any>;
+  dishes: any[];  
 
   constructor(private menuService: MenuService) { }
 
   ngOnInit() {
     this.dishes = this.menuService.load(this.kind);
   }
-
 }

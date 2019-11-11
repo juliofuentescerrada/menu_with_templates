@@ -1,4 +1,29 @@
 <app-menu-header></app-menu-header>
-<app-menu-block [kind]="'starter'"></app-menu-block>
-<app-menu-block [kind]="'main course'"></app-menu-block>
+<app-menu-block [kind]="'starter'" [dishlistTemplate]="table"></app-menu-block>
+<app-menu-block [kind]="'main course'" [dishlistTemplate]="grid"></app-menu-block>
 <app-menu-block [kind]="'dessert'"></app-menu-block>
+
+<!-- <ng-template #table let-items>
+<table style="width:100%">
+  <tr>
+    <td>Name</td>
+    <td>Picture</td>
+    <td>Price</td>
+  </tr>
+  <tr *ngFor="let i of items">
+    <td>{{i.name}}</td>
+    <td>{{i.picture}}</td>
+    <td>{{i.price | currency}}</td>
+  </tr>
+</table>
+</ng-template>
+
+<ng-template #grid let-items>
+<div class="row">
+  <div class="col text-center" *ngFor="let i of items">
+    <h1>{{i.picture}}</h1>
+    <h1>{{i.name}}</h1>
+    <h1>{{i.price | currency}}</h1>
+  </div>
+</div>
+</ng-template> -->
