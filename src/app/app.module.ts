@@ -6,10 +6,11 @@ import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import { MenuBlockComponent } from './menu-block/menu-block.component';
 import { MenuBlockTitleComponent } from './menu-block-title/menu-block-title.component';
 import { MenuService } from './menu.service';
+import { MenuTemplateDirective } from './menu-template.directive';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, MenuHeaderComponent, MenuBlockComponent, MenuBlockTitleComponent ],
+  declarations: [ AppComponent, MenuHeaderComponent, MenuBlockComponent, MenuBlockTitleComponent, MenuTemplateDirective ],
   bootstrap:    [ AppComponent ],
   providers: [MenuService]
 })

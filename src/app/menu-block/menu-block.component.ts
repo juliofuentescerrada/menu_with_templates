@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef,ContentChild } from '@angular/core';
 import { MenuService } from '../menu.service';
+import { MenuTemplateDirective } from '../menu-template.directive';
 
 @Component({
   selector: 'app-menu-block',
@@ -10,6 +11,8 @@ export class MenuBlockComponent implements OnInit {
 
   @Input() kind: string;
   @Input() dishlistTemplate: TemplateRef<any>;
+  @ContentChild(MenuTemplateDirective,{static:false}) contentTemplate: MenuTemplateDirective;
+
   dishes: any[];  
 
   constructor(private menuService: MenuService) { }
