@@ -1,4 +1,8 @@
 <app-menu-block-title [text]="kind"></app-menu-block-title>
-<h3 *ngFor="let dish of dishes">
-  {{dish.picture}} {{dish.name}}
+<ng-container *ngTemplateOutlet="contentTemplate?.template || dishlistTemplate || default; context: {$implicit:dishes}"></ng-container>
+<ng-template #default let-items>
+<h3 *ngFor="let item of items">
+  {{item.picture}} {{item.name}} {{item.price | currency}}
 </h3>
+</ng-template>
+
